@@ -9,7 +9,8 @@
         chart: {
             //   renderTo: '',
             type: 'column',
-            marginBottom: 75,
+            height: '100%',
+      //    marginBottom: 75,
         },
 
         title: {
@@ -45,17 +46,20 @@
 
         legend: {
             align: 'left',
+           // height: 40,
             x: 0,
             verticalAlign: 'bottom',
-            y: 25,
-            floating: true,
+           // y: 25,
+            itemDistance: 5,
+           // floating: true,
             borderWidth: 0,
             shadow: false,
-            alignColumns: false,
+            alignColumns: true,
             symbolRadius: 0,
             itemStyle: {
                 fontWeight: 'normal',
-                fontSize: '10px',
+                fontSize: '9px',
+
             },
         },
 

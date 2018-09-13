@@ -1,5 +1,7 @@
 ﻿$(function () {
 
+    var piePersonal = Math.round(percentPersonalActiveCustomers),
+        pieTeam = Math.round(percentTeamActiveCustomers);
     ///
     /// Item 4 **** QUALIFICATIONS *@
     /// ***** КРУГОВАЯ ДИАГРАММА *****
@@ -81,7 +83,7 @@
     pirChartRetentionOptions.chart.renderTo = 'pirChartRetention';
     pirChartRetentionOptions.title.text = 'Personal';
     pirChartRetentionOptions.series[0].name = 'Personal';
-    pirChartRetentionOptions.series[0].data[0].y = 58;
+    pirChartRetentionOptions.series[0].data[0].y = piePersonal;
 
     new Highcharts.Chart(pirChartRetentionOptions);
 
@@ -89,7 +91,7 @@
     pirChartRetentionOptions.chart.renderTo = 'pirChartRetention2';
     pirChartRetentionOptions.title.text = 'Team';
     pirChartRetentionOptions.series[0].name = 'Team';
-    pirChartRetentionOptions.series[0].data[0].y = 63;
+    pirChartRetentionOptions.series[0].data[0].y = pieTeam ;
     new Highcharts.Chart(pirChartRetentionOptions);
 
 });
