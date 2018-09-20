@@ -9,7 +9,7 @@
     var pirChartRetentionOptions = {
         chart: {
             type: 'solidgauge',
-            height: '170%',
+            height: '160%',
            //marginTop: 50,
         },
 
@@ -19,7 +19,7 @@
 
         title: {
             text: 'Personal',
-            y: 50,
+            y: 20,
             style: {
                 fontSize: '22px',
                 color: "#73D1CF",
@@ -70,11 +70,11 @@
                 enabled: true,
                 useHTML: true,
                 borderWidth: 0,
-                padding: -20,
+                padding: -50,
                 style: {
                     fontSize: '24px',
                 },
-                format: '<br><br><span style="font-size:2em; color: {point.color}; font-weight: bold">{y}%</span>'
+                format: '<span style="font-size:2em; color: {point.color}; font-weight: bold">{y}%</span>'
             }
         }],
     };
