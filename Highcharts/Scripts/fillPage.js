@@ -21,7 +21,7 @@ var percentTeamActiveCustomers = teamActiveCustomers * 100 / teamTotalCustomers;
 $(function () {
 
 
-
+    // Add arrows
     $('.div-row').each(function (index, row) {
         var val1 = parseFloat($('.align-left .value-text', row).text().replace(/[^0-9\.]/g, ''));
         var val2 = parseFloat($('.align-right .value-text', row).text().replace(/[^0-9\.]/g, ''));
@@ -44,75 +44,23 @@ $(function () {
     })
 
 
-    //var first = $('.div-row  .align-left .value-text');
+    // Вариант 1:
+    //$('.value-header').attr('title', 'TootlipText to show').attr('data-toggle', 'tooltip').attr('data-placement', 'top');
+    //$('.value-header').tooltip();
 
-    //$('.div-row  .align-left .value-text').each(function (index, element) {
-    //    console.log($(element).text());
+    // Вариант 2: + CSS for tooltiptext class
+    $('.value-header').append('<span class="tooltiptext">Tooltip text</span>'); //<div class="tooltip">Hover over me</div>
 
-    //})
+    // Вариант 3: .....
+    //var showPopup = function (e) {
+    //    console.log(this)
+    //}
+    //var hidePopup = function (e) {
+    //    console.log(this)
+    //}
+    // $('.value-header').hover(showPopup, hidePopup);
 
-    //.div-row  align-left   value-text
-    //.div-row align-right value-text
-
-    //$('.div-row  .align-left .value-text, .div-row  .align-right .value-text').each(function (index, element) {
-    //    console.log($(element).text());
-
-    //})
-
-
-
-
-
-
- // console.log(val1 + ' -|- ' + val2);
-           // val1 = $('.align-left .value-text', row).text().match(/(?:[0-9]+)\.(?:[0-9]{2})/g);
-
-
-   // val1 = $('.align-left .value-text', row).text().replace(/[^0-9\.]/g, '');
-
-
-    //$('.div-row').each(function (index, row) {
-    //    var val1 = $('.align-left .value-text', row).text().replace(/[^0-9\.]/g, '');
-    //    var val2 = $('.align-right .value-text', row).text().replace(/[^0-9\.]/g, '');
-    //    console.log(val1 + ' -|- ' + val2);
-    //    if ($.isNumeric(val1) && $.isNumeric(val2)) {
-    //        if (val2 > 50 && val2 <= 100) {
-    //            console.log('Add arrow UP ' + val2);
-    //        }
-    //        if (val1 > val2) {
-    //            console.log('go go -> ' + val1 + ' ' + val2);
-    //        }
-    //    } else val1 = 'string=)';
-
-
-    //})
-
-
-
-
-    //$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?',
-    //    function (data) { testData = data;});
-    // Create the chart
-
-    //$.each(products, function (product) {
-    //    testData.push({ "name": product.ProductName, "data": product.UnitPrice});
-    //})
-
-    //    testData = products.UnitPrice;
-
-    //    chart1 = Highcharts.chart('container', {
-    //        chart: {
-    //            type: 'bar'
-    //        },
-    //        series: [{
-    //            name: 'Products',
-    //            data: testData // predefined JavaScript array
-    //        }]
-    //    });
-
-
-
-
+    
 
 
 
