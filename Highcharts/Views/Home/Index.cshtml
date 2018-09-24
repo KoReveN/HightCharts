@@ -1,5 +1,7 @@
 ﻿
 @{
+    /**/
+
     ViewBag.Title = "Index";
 }
 
@@ -75,7 +77,7 @@
         <div class="div-row">
             <div class="div-column align-left">
                 <div class="value-header">Personal retail Sales</div>
-                <div class="value-text">$110,108 <img src="~/Content/img/up.PNG" height="18" /></div>
+                <div class="value-text">$110,108 </div>
             </div>
             <div class="div-column align-right">
                 <div class="value-header">Goal</div>
@@ -88,7 +90,7 @@
         <div class="div-row">
             <div class="div-column align-left">
                 <div class="value-header">Sales Gross Profit</div>
-                <div class="value-text">53.2% <img src="~/Content/img/up.PNG" height="18" /></div>
+                <div class="value-text">53.2% </div>
             </div>
             <div class="div-column align-right">
                 <div class="value-header">Goal</div>
@@ -102,11 +104,11 @@
         <div class="div-row">
             <div class="div-column align-left">
                 <div class="value-header">Previous Month Sales +/-</div>
-                <div class="value-text">42% <img src="~/Content/img/up.PNG" height="18" /></div>
+                <div class="value-text">42% </div>
             </div>
             <div class="div-column align-right">
                 <div class="value-header">Mar 2018 Sales +/-</div>
-                <div class="value-text">53.2% <img src="~/Content/img/up.PNG" height="18" /></div>
+                <div class="value-text">53.2% </div>
             </div>
         </div>
 
@@ -150,11 +152,11 @@
         <div class="div-row">
             <div class="div-column align-left">
                 <div class="value-header">TM's with + Sales</div>
-                <div class="value-text">44% <img src="~/Content/img/down.PNG" height="18" /></div>
+                <div class="value-text">44% </div>
             </div>
             <div class="div-column align-right">
                 <div class="value-header">Leaders with + Bonus</div>
-                <div class="value-text">55% <img src="~/Content/img/up.PNG" height="18" /></div>
+                <div class="value-text">55% </div>
             </div>
         </div>
 
@@ -344,3 +346,47 @@
 <script src="~/Scripts/chartsProfit.js"></script>
 <script src="~/Scripts/chartsRetention.js"></script>
 <script src="~/Scripts/chartsRetentionPie.js"></script>
+
+
+
+@helper Tooltip(string text)
+{
+    /**/
+
+    if (text.Length < 35)
+    {
+<span class="tooltiptext tooltip-small">@text</span>}
+    else if (text.Length < 60)
+    {
+<span class="tooltiptext tooltip-medium">@text</span>}
+    else
+    {
+<span class="tooltiptext tooltip-large">@text</span>}
+}
+
+<script>
+   // $(document).ready(
+
+        var tooltip_short =  '@Tooltip("Tooltip text from html helper")',
+            tooltip_medium =  '@Tooltip("Tooltip text from html helper and some more text for medium")',
+            tooltip_long =  '@Tooltip("Tooltip text from html helper and some more text for medium large and some more text for large size")';
+
+        $('.value-header').each(function () {
+            switch (getRandomInt(0, 3)) {
+                case 1: this.innerHTML += tooltip_short;
+                    break;
+                case 2: this.innerHTML += tooltip_medium;
+                    break;
+                default: this.innerHTML += tooltip_long;
+                    break;
+            }
+        })
+
+        @*$('.value-header').append('@Tooltip("Tooltip text from html helper")');*@
+    
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+    //);
+</script>

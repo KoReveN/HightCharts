@@ -49,7 +49,9 @@ $(function () {
     //$('.value-header').tooltip();
 
     // Вариант 2: + CSS for tooltiptext class
-    $('.value-header').append('<span class="tooltiptext">Tooltip text</span>'); //<div class="tooltip">Hover over me</div>
+   // $('.value-header').append('<span class="tooltiptext">Tooltip text</span>'); //<div class="tooltip">Hover over me</div>
+
+   
 
     // Вариант 3: .....
     //var showPopup = function (e) {
